@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+const path = require('path');
+const glob = require('glob');
+const patterns = process.argv.slice(2);
+
+require('../src/require-hook');
+
+patterns.forEach(function (pattern) {
+  glob(pattern, function (err, matches) {
+    if (err) throw err;
+
+    matches.forEach(function (match) {
+      require(path.resolve(process.cwd(), match));
+    });
+  });
+});
+
