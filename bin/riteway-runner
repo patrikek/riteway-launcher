@@ -3,7 +3,7 @@ const path = require('path');
 const glob = require('glob');
 const patterns = process.argv.slice(2);
 
-require('../src/require-hook');
+require('../src/bablifier');
 
 patterns.forEach(function (pattern) {
   glob(pattern, function (err, matches) {

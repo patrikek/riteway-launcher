@@ -11,8 +11,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "glob": "^7.1.1",
-    "reify": "^0.3.8"
+    "glob": "^7.1.1"
   },
   "bin": {
     "riteway-runner": "bin/riteway-runner"

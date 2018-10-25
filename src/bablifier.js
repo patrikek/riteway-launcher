@@ -1,12 +1,10 @@
-// Compile with require hooks from reify.
+// Compile with @babel/core
 
 require('@babel/polyfill')
 const fs = require('fs');
 const path = require('path');
 const babel = require("@babel/core");
 const original = require.extensions['.js'];
-
-require('reify/node/runtime');
 
 require.extensions['.js'] = function (m, filename) {
   if (/node_modules/.test(filename)) return original(m, filename);
