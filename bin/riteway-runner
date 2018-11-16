@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const path = require('path');
 const glob = require('glob');
 const { patterns } = require('../src/args')
@@ -13,5 +14,10 @@ patterns.forEach(function (pattern) {
       require(path.resolve(process.cwd(), match));
     });
   });
+});
+
+process.on('exit', function() {
+
+  process.stdout.write('DONE');
 });
 
