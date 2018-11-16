@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
 const glob = require('glob');
-const patterns = process.argv.slice(2);
+const { patterns } = require('../src/args')
 
 require('../src/bablifier');
 
