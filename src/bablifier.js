@@ -13,12 +13,17 @@ require.extensions['.js'] = function (m, filename) {
     ? new RegExp(exclude)
     : /node_modules/
 
-  if (excludePattern.test(filename)) return original(m, filename);
+  if (excludePattern.test(filename)) {
+    original(m, filename);
+  } else {
 
-  const source = fs.readFileSync(filename, 'utf-8');
+    const source = fs.readFileSync(filename, 'utf-8');
 
-  const bablified = babel.transform(source, { configFile: path.resolve(__dirname, "../babel.config.js") }).code
+    const bablified = babel.transform(source, { configFile: path.resolve(__dirname, "../babel.config.js") }).code
 
-  m._compile('"use strict";\n' + bablified, filename);
+    m._compile('"use strict";\n' + bablified, filename);
+
+  }
+
 
 }

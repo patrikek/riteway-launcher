@@ -6,16 +6,12 @@ const { patterns } = require('../src/args')
 
 require('../src/bablifier');
 
-try {
-  patterns.forEach(function (pattern) {
-    glob(pattern, function (err, matches) {
-      if (err) throw err;
+patterns.forEach(function (pattern) {
+  glob(pattern, function (err, matches) {
+    if (err) throw err;
 
-      matches.forEach(function (match) {
-        require(path.resolve(process.cwd(), match));
-      });
+    matches.forEach(function (match) {
+      require(path.resolve(process.cwd(), match));
     });
   });
-} catch(err) {
-  console.log(err)
-}
+});
