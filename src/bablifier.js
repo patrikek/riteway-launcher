@@ -22,8 +22,5 @@ require.extensions['.js'] = function (m, filename) {
     const bablified = babel.transform(source, { configFile: path.resolve(__dirname, "../babel.config.js") }).code
 
     m._compile('"use strict";\n' + bablified, filename);
-
   }
-
-
 }

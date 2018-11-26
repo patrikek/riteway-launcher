@@ -15,6 +15,6 @@
     "minimist": "^1.2.0"
   },
   "bin": {
-    "riteway-runner": "bin/riteway-runner"
+    "riteway-runner": "bin/index.js"
   }
 }
